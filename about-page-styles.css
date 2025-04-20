@@ -1,0 +1,357 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+
+/* ===== Base Styles ===== */
+.offeringsConnteiner,
+.missions-section,
+.ware-house-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.page-heading {
+  padding: 2% 0px 0px 7.5%;
+}
+
+.page-heading h1 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
+/* ===== Offerings Section ===== */
+#offfers {
+  padding: 2.5% 7.5%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  width: 100%;
+  border-radius: 10px;
+  background-color: transparent;
+  border: none;
+  overflow: visible;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  display: block;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.card-img-top:hover {
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
+  transform: scale(1.02);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 0px;
+  padding-right: 0px;
+  gap: 10px;
+}
+
+.recent-link {
+  color: #A020F0;
+  padding: 5px 10px;
+  border: 1px solid #A020F0;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.recent-link:hover {
+  background-color: #A020F0;
+  color: white;
+  transform: scale(1.05);
+}
+
+.card-body h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #E6E6FA;
+}
+
+.card-body button {
+  background-color: #E6D9FB;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.card-body button:hover {
+  background-color: #A020F0;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(160, 32, 240, 0.7);
+}
+
+/* ===== Missions & Warehouse Sections ===== */
+#missionConteiner,
+#wareHouseContainer {
+  color: #ffffff;
+  padding: 2.5% 7.5%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission {
+  border: 2px solid #d3d3d3;
+  border-radius: 15px;
+  padding: 15px 25px;
+  width: 80%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(5px);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Expansion animation */
+.mission::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #d3d3d3;
+  border-radius: 15px;
+  animation: pulse 1.5s infinite;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mission:hover::after {
+  opacity: 0.6;
+}
+
+.mission:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(210, 210, 210, 0.3);
+}
+
+.mission_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.m_heading {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #d3d3d3;
+}
+
+.arrow_span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow_icon {
+  transition: transform 0.3s ease;
+}
+
+.desc_active .arrow_icon {
+  transform: rotate(180deg);
+}
+
+.m_desc {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.desc_active .m_desc {
+  max-height: 500px;
+  opacity: 1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #d3d3d3;
+}
+
+/* Warehouse items */
+.house-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+.house-cont > div {
+  border: 2px solid #d3d3d3;
+  border-radius: 15px;
+  padding: 15px 25px;
+  width: 100%;
+  transition: all 0.4s ease;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Expansion animation for warehouse items */
+.house-cont > div::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #d3d3d3;
+  border-radius: 15px;
+  animation: pulse 1.5s infinite;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.house-cont > div:hover::after {
+  opacity: 0.6;
+}
+
+.house-cont > div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(210, 210, 210, 0.3);
+}
+
+.warehouse-para {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #d3d3d3;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  70% {
+    transform: scale(1.03);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #offfers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .card-body {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .mission,
+  .house-cont {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  #about-section{
+    flex-direction: column;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    gap: 5vh;
+  }
+  #offfers {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-heading h1 {
+    font-size: 24px;
+  }
+  
+  .mission,
+  .house-cont {
+    width: 95%;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #offfers,
+  #missionConteiner,
+  #wareHouseContainer {
+    padding: 2.5% 5%;
+  }
+  
+  .mission,
+  .house-cont {
+    width: 100%;
+  }
+  .m_heading{
+    font-size: 1rem;
+  }
+  .m_desc p{
+    font-size: 0.75rem;
+  }
+  .warehouse-para{
+    font-size: 0.75rem;
+  }
+}

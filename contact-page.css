@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+
+#contact-section{
+    background-color: white;
+    width: 100vw;
+    display: grid;
+  grid-template-columns: auto auto;
+  padding-top: 80px;
+  align-items: center;
+  justify-content: center;
+  gap: 40px 15vw;
+}
+
+#handles{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.C-headings{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #3D1E6D;
+    font-weight: 600;
+    margin: 0;
+}
+.C-SubHeadings{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    color: #3D1E6D;
+    opacity: 0.5;
+    font-weight: 600;
+    margin: 0;
+}
+#handles-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0px;
+}
+.C-icons svg{
+    width: 50px;
+    height: 50px;
+}
+
+#email-us{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+#email-id{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+#id span{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    color: black;
+    /* font-weight: 500; */
+    margin: 0;
+}
+
+#navigation{
+    display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 20px 50px;
+}
+.navigation-links{
+    color: black;
+}
+#copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#club-name{
+    font-weight: 500;
+    color:#3D1E6D;
+}
+
+/* Remove previous animation keyframes and declarations */
+
+/* New Animation Classes */
+.contact-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.contact-animate.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Keep all your hover effects and responsive styles */
+.C-icons svg {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.C-icons:hover svg {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 5px rgba(61, 30, 109, 0.5));
+}
+
+.navigation-links {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navigation-links:hover {
+    color: #3D1E6D;
+}
+
+.navigation-links::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #3D1E6D;
+    transition: width 0.3s ease;
+}
+
+.navigation-links:hover::after {
+    width: 100%;
+}
+
+#id span {
+    transition: color 0.3s ease;
+}
+
+#id:hover span {
+    color: #3D1E6D;
+}
+
+/* Responsive styles remain the same */
+@media (max-width: 768px) {
+    #contact-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 20px;
+    }
+    
+    #handles, #email-us, #navigation, #copyright {
+        width: 100%;
+        text-align: center;
+    }
+    
+    #navigation {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    #email-us{
+        gap: 0.5rem;
+    }
+    .C-headings {
+        font-size: 1.25rem;
+      }
+      .C-SubHeadings{
+      font-size: 1rem;
+    }
+    .C-icons svg {
+        width: 40px;
+        height: 40px;
+    }
+    #id span{
+        font-size: 1.25rem;
+    }
+    .navigation-links{
+        font-size: 1.1rem;
+    }
+}
+@media (max-width: 480px){
+    .C-headings {
+      font-size: 1rem;
+    }
+    .C-SubHeadings{
+    font-size: 0.75rem;
+  }
+  .C-icons svg {
+    width: 30px;
+    height: 30px;
+}
+#id span{
+    font-size: 1rem;
+}
+#email-us{
+    gap: 0.5rem;
+}
+.navigation-links{
+    font-size: 0.8rem;
+}
+#copy-icon{
+    display: flex
+    ;
+        align-items: center;
+        justify-content: center;
+    }
+    #copyright{
+        gap: 2px;
+    }
+#copy-icon svg{
+    width: 1rem;
+    height: 1rem;
+}
+#club-name{
+    font-size: 0.75rem;
+}
+#c-text{
+    font-size: 0.5rem;
+}
+  }
