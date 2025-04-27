@@ -38,6 +38,25 @@ const eventsData = {
       ]
     },
     {
+      title: "Infinitix Club Orientation 2025",
+      date: "21 April 2025",
+      time: "1:30PM to 3PM",
+      location: "VSH - SNIST",
+      knowmore: "#",
+      insta: "#",
+      linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7320804031117803521",
+      linkText: "Know More",
+      thumbnail: "Assets/Events/orientation.jpg",
+      description: "Infinitix Club Orientation 2025 is the official launchpad for new members to explore the vision, mission, and dynamic environment of Infinitix — the club dedicated to data science, technology, and career growth. This orientation is crafted to inspire students, introduce the core team, and lay out a roadmap filled with opportunities for skill-building, collaborative projects, and personal development.Participants will gain insight into how the club operates, the kinds of events and sessions it organizes, and the real impact it has had on its members. With a blend of inspiration, information, and interaction, this session marks the beginning of a transformative journey for every attendee.",
+      outcomes: [
+        "Clear understanding of the club’s structure and goals",
+        "Inspiration from real member experiences and success stories",
+        "Awareness of upcoming learning opportunities and events",
+        "Connection with like-minded peers and mentors",
+        "Guidance on how to officially join and participate in the club activities"
+      ]
+    },
+    {
       title: "Git and GitHub Workshop",
       date: "15 February 2025",
       time: "1PM to 3:30PM",
@@ -54,28 +73,29 @@ const eventsData = {
         "Ability to create and manage repositories on GitHub",
         "Confidence to contribute to collaborative coding projects"
       ]
-    }
+    },
+    
   ],
   upcoming: [
-    {
-      title: "Infinitix Club Orientation 2025",
-      date: "21 April 2025",
-      time: "1:30PM to 3PM",
-      location: "VSH - SNIST",
-      knowmore: "#",
-      insta: "#",
-      linkedin: "#",
-      linkText: "Know More",
-      thumbnail: "Assets/Events/orientation.jpg",
-      description: "Infinitix Club Orientation 2025 is the official launchpad for new members to explore the vision, mission, and dynamic environment of Infinitix — the club dedicated to data science, technology, and career growth. This orientation is crafted to inspire students, introduce the core team, and lay out a roadmap filled with opportunities for skill-building, collaborative projects, and personal development.Participants will gain insight into how the club operates, the kinds of events and sessions it organizes, and the real impact it has had on its members. With a blend of inspiration, information, and interaction, this session marks the beginning of a transformative journey for every attendee.",
-      outcomes: [
-        "Clear understanding of the club’s structure and goals",
-        "Inspiration from real member experiences and success stories",
-        "Awareness of upcoming learning opportunities and events",
-        "Connection with like-minded peers and mentors",
-        "Guidance on how to officially join and participate in the club activities"
-      ]
-    },
+    // {
+    //   title: "Infinitix Club Orientation 2025",
+    //   date: "21 April 2025",
+    //   time: "1:30PM to 3PM",
+    //   location: "VSH - SNIST",
+    //   knowmore: "#",
+    //   insta: "#",
+    //   linkedin: "#",
+    //   linkText: "Know More",
+    //   thumbnail: "Assets/Events/orientation.jpg",
+    //   description: "Infinitix Club Orientation 2025 is the official launchpad for new members to explore the vision, mission, and dynamic environment of Infinitix — the club dedicated to data science, technology, and career growth. This orientation is crafted to inspire students, introduce the core team, and lay out a roadmap filled with opportunities for skill-building, collaborative projects, and personal development.Participants will gain insight into how the club operates, the kinds of events and sessions it organizes, and the real impact it has had on its members. With a blend of inspiration, information, and interaction, this session marks the beginning of a transformative journey for every attendee.",
+    //   outcomes: [
+    //     "Clear understanding of the club’s structure and goals",
+    //     "Inspiration from real member experiences and success stories",
+    //     "Awareness of upcoming learning opportunities and events",
+    //     "Connection with like-minded peers and mentors",
+    //     "Guidance on how to officially join and participate in the club activities"
+    //   ]
+    // },
   ],
 };
 
@@ -305,23 +325,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Function to render events
+let showAllRecent = false; // Track if all recent events are shown
+
 function renderEvents() {
   const recentEventsContainer = document.getElementById("recent-events");
   const upcomingEventsContainer = document.getElementById("upcoming-events");
+  const upcomingEventsWrapper = document.getElementById("upcoming-events-wrapper"); // New wrapper for title and container
 
   // Clear existing content
   recentEventsContainer.innerHTML = "";
   upcomingEventsContainer.innerHTML = "";
 
   // Add recent events
-  eventsData.recent.forEach((event) => {
+  const recentEventsToShow = showAllRecent ? eventsData.recent : eventsData.recent.slice(0, 3);
+  recentEventsToShow.forEach((event) => {
     recentEventsContainer.innerHTML += createEventCard(event);
   });
 
-  // Add upcoming events
-  eventsData.upcoming.forEach((event) => {
-    upcomingEventsContainer.innerHTML += createEventCard(event);
-  });
+  // Add upcoming events or "Stay tuned" message
+  if (eventsData.upcoming.length === 0) {
+    upcomingEventsWrapper.innerHTML = `<p class="stay-tuned-message">Stay tuned for upcoming events!</p>`;
+  } else {
+    eventsData.upcoming.forEach((event) => {
+      upcomingEventsContainer.innerHTML += createEventCard(event);
+    });
+  }
 
   // Start title animations
   startTitleAnimations();
@@ -329,6 +357,20 @@ function renderEvents() {
   // Initialize intersection observer
   initIntersectionObserver();
 }
+
+// Function to update explore button text
+function updateExploreButtonText() {
+  const exploreButton = document.getElementById("explore-button");
+  exploreButton.textContent = showAllRecent ? "Show Less" : "Explore More";
+}
+ 
+// Function to toggle recent events
+function toggleRecentEvents() {
+  showAllRecent = !showAllRecent;
+  renderEvents();
+  updateExploreButtonText();
+}
+
 
 // Function to handle title animations
 function startTitleAnimations() {
@@ -376,4 +418,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     startTitleAnimations();
   });
+
+  const exploreButton = document.getElementById("explore-button");
+  if (exploreButton) {
+    exploreButton.addEventListener("click", toggleRecentEvents);
+  }
 });

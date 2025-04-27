@@ -73,9 +73,9 @@
 }
 
 .recent-link {
-  color: #A020F0;
+  color: #a020f0;
   padding: 5px 10px;
-  border: 1px solid #A020F0;
+  border: 1px solid #a020f0;
   border-radius: 5px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -83,7 +83,7 @@
 }
 
 .recent-link:hover {
-  background-color: #A020F0;
+  background-color: #a020f0;
   color: white;
   transform: scale(1.05);
 }
@@ -96,11 +96,11 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  color: #E6E6FA;
+  color: #e6e6fa;
 }
 
 .card-body button {
-  background-color: #E6D9FB;
+  background-color: #e6d9fb;
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -114,7 +114,7 @@
 }
 
 .card-body button:hover {
-  background-color: #A020F0;
+  background-color: #a020f0;
   color: white;
   transform: scale(1.1);
   box-shadow: 0 0 10px rgba(160, 32, 240, 0.7);
@@ -140,7 +140,7 @@
   display: flex;
   flex-direction: column;
   transition: all 0.4s ease;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
   margin-bottom: 20px;
   position: relative;
@@ -149,7 +149,7 @@
 
 /* Expansion animation */
 .mission::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -234,7 +234,7 @@
   padding: 15px 25px;
   width: 100%;
   transition: all 0.4s ease;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
   position: relative;
   overflow: hidden;
@@ -242,7 +242,7 @@
 
 /* Expansion animation for warehouse items */
 .house-cont > div::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -288,8 +288,12 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Responsive Design */
@@ -297,13 +301,13 @@
   #offfers {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .card-body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
-  
+
   .mission,
   .house-cont {
     width: 90%;
@@ -311,10 +315,9 @@
 }
 
 @media (max-width: 768px) {
-  #about-section{
+  #about-section {
     flex-direction: column;
-    display: flex
-;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 5vh;
@@ -322,11 +325,10 @@
   #offfers {
     grid-template-columns: 1fr;
   }
-  
+
   .page-heading h1 {
     font-size: 24px;
   }
-  
   .mission,
   .house-cont {
     width: 95%;
@@ -340,18 +342,18 @@
   #wareHouseContainer {
     padding: 2.5% 5%;
   }
-  
+
   .mission,
   .house-cont {
     width: 100%;
   }
-  .m_heading{
+  .m_heading {
     font-size: 1rem;
   }
-  .m_desc p{
+  .m_desc p {
     font-size: 0.75rem;
   }
-  .warehouse-para{
+  .warehouse-para {
     font-size: 0.75rem;
   }
 }
